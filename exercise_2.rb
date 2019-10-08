@@ -8,7 +8,15 @@
 # Still assume the words are lowercase.
 
 def pig_latin(word)
-
+  word_array = word.split("")
+  if word.start_with?("a","e","i","o","u")
+    return "#{word}way"
+  else
+    until word_array[0].start_with?("a","e","i","o","u")
+    word_array = word_array.rotate(1)
+    end
+    return "#{word_array.join}ay"
+  end
 end
 
 ## Tests:
