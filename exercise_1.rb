@@ -11,7 +11,13 @@
 # Assume your user is a developer — e.g. you don't need to write a user interface.
 
 def pig_latin(word)
-
+  
+  if word.start_with?("a","e","i","o","u")
+    return "#{word}way"
+  else
+    word_array = word.split("").rotate(1).join
+    return "#{word_array}ay"
+  end
 end
 
 ## Tests:
